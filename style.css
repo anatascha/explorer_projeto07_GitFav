@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    font-size: 62.5%;
+    --ff-primary: 'Roboto', sans-serif;
+    --text-color: #FFFFFF; /* Cor branca para contraste */
+    --hue: 194;
+    --primary-color: #092D38;
+  }
+  
+  body {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: #000000; /* Fundo preto */
+  }
+  
+  body * {
+    font-family: var(--ff-primary);
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  #app {
+    display: flex;
+    width: 1440px;
+    height: 1054px;
+    padding: 115px 160px 116px 160px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 87px;
+    margin: 0 auto;
+  }
+  
+  header {
+    display: flex; /* Flexbox ativado */
+    height: 48px; /* Altura de 48px */
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: flex-end; /* Alinhar ao fundo verticalmente */
+    gap: 286px; /* Espaçamento entre os elementos */
+    flex-shrink: 0; /* Impede o header de encolher */
+    width: 100%; /* Para garantir que ocupe a largura total do #app */
+  }
+  
+  header h1 {
+    color: #FFF;
+    font-family: "Roboto Mono";
+    font-size: 33.041px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24.781px; /* 75% */
+  }
+  
+  header h1 img{
+    margin-right: 16px;
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+    height: 48px;
+  }
+  
+  .search input {
+    display: flex; /* Flexbox aplicado */
+    padding: 16px; /* Padding interno de 16px */
+    align-items: center; /* Alinha o conteúdo internamente ao centro */
+    gap: 10px; /* Espaçamento interno entre os elementos (se houver) */
+    align-self: stretch; /* O input se estende para ocupar o máximo de largura disponível */
+    width: 462px;
+    margin-right: 8px;
+    
+    border-radius: 5px; /* Borda arredondada de 5px */
+    background: #06181C; /* Fundo escuro */
+    border: none; /* Removendo borda padrão */
+    color: white; /* Cor do texto para contraste */
+    font-size: 1.4rem; /* Tamanho do texto */
+  }
+  
+  .search input::placeholder {
+    color: #ccc; /* Cor do placeholder para diferenciar do texto inserido */
+  }
+  
+  
+  .search button {
+    display: flex; /* Flexbox aplicado */
+    padding: 12px 32px; /* Padding de 12px vertical e 32px horizontal */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    gap: 8px; /* Espaçamento entre os elementos internos (caso haja ícones ou texto adicional) */
+  
+    border-radius: 5px; /* Borda arredondada de 5px */
+    background: #065E7C; /* Fundo com a cor especificada (#065E7C) */
+    border: none; /* Remove borda padrão */
+    color: white; /* Cor do texto */
+    font-size: 1.4rem; /* Tamanho do texto */
+    cursor: pointer; /* Mostra o cursor de ponteiro ao passar sobre o botão */
+  }
+  
+  .search button:hover {
+    filter: brightness(1.1); /* Efeito de brilho no hover */
+  }
+  
+  
+  table {
+    
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+  }
+  
+  table * {
+    font-size: 1.4rem;
+    color: var(--text-color);
+  }
+  
+  /* Cabeçalho da tabela */
+  table thead{
+    width: 100%; /* Faz o cabeçalho ocupar a largura total */
+    align-items: flex-start; /* Alinha os itens no topo */
+    
+  }
+  
+  table thead th{
+    background: var(--primary-color);
+    text-align: left;
+  }
+  
+  /* Estilos individuais para cada coluna no thead */
+  
+  /* Coluna Usuário */
+  table thead th:first-child {
+    width: 504px; /* Largura específica */
+    padding: 16px 24px 16px 40px; /* Padding conforme solicitado */
+    flex-direction: column; /* Direção da flexbox em coluna */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    gap: 12px; /* Espaçamento entre elementos */
+    flex-shrink: 0; /* Impede o encolhimento */
+  }
+  
+  /* Coluna Repositórios */
+  table thead th:nth-child(2) {
+    width: 218px; /* Largura específica */
+    padding: 16px 24px 16px 40px; /* Padding conforme solicitado */
+    flex-direction: column; /* Direção da flexbox em coluna */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    gap: 12px; /* Espaçamento entre elementos */
+    flex-shrink: 0; /* Impede o encolhimento */
+    align-self: stretch; /* Faz com que a altura preencha o espaço vertical */
+  }
+  
+  /* Coluna Seguidores */
+  table thead th:nth-child(3) {
+    padding: 16px 24px 16px 40px; /* Padding conforme solicitado */
+    flex-direction: column; /* Direção da flexbox em coluna */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    gap: 12px; /* Espaçamento entre elementos */
+    flex: 1; /* Flex-grow para ocupar o espaço restante */
+    align-self: stretch; /* Faz com que a altura preencha o espaço vertical */
+  }
+  
+  /* Coluna Ação */
+  table thead th:last-child {
+    width: 178px; /* Largura específica */
+    padding: 16px 24px 16px 40px; /* Padding conforme solicitado */
+    flex-direction: column; /* Direção da flexbox em coluna */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    gap: 12px; /* Espaçamento entre elementos */
+    flex-shrink: 0; /* Impede o encolhimento */
+    align-self: stretch; /* Faz com que a altura preencha o espaço vertical */
+  }
+  
+  table thead th:first-child {
+    border-top-left-radius: .4rem;
+  }
+  
+  table thead th:last-child {
+    border-top-right-radius: .4rem;
+  }
+  
+  .has-entries table tbody tr:nth-child(even) {
+    background: rgba(6, 22, 27, 0.50);
+  }
+  
+  .has-entries table tbody tr:nth-child(odd) {
+    background: #06181C;
+  }
+  
+  table td {
+    padding: 1.5rem;
+    text-align: left;
+  }
+  
+  td.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  td.user img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  td.user a {
+    text-decoration: none;
+    padding-left: 7px;
+  }
+  
+  td.user a p {
+    font-weight: bold;
+  }
+  
+  td.repositories, td.followers, td.removeButton{
+    padding-left: 40px;
+  }
+  
+  table tr:last-child td:first-child {
+    border-bottom-left-radius: 0.4rem; /* Borda arredondada no canto inferior esquerdo */
+  }
+  
+  table tr:last-child td:last-child {
+    border-bottom-right-radius: 0.4rem; /* Borda arredondada no canto inferior direito */
+  }
+  
+  td .remove {
+    background: none;
+    border: none;
+    color: #F75A68;
+    cursor: pointer;
+  }
+  
+  .empty-state {
+    height: 664px;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    flex-shrink: 0;
+    border-bottom-left-radius: 0.4rem; 
+    border-bottom-right-radius: 0.4rem;
+    background-color: #030B0D;
+    text-align: center;
+  }
+  
+  .empty-state p {
+    align-items: center;
+    color: #4E5455;
+    font-family: "Roboto Mono";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24.781px; /* 61.953% */
+  }
